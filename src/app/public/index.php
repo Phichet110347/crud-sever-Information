@@ -1,32 +1,32 @@
 <?php
-try {
-    require_once __DIR__ . '/../config/db.php';
-} catch (Exception $e) {
-    die("Could not load configuration: " . $e->getMessage());
-}
-try {
-    $query = "SELECT
-        server.server_id,
-        server.service_id,
-        server.service_name,  
-        server.service_date,
-        server.service_space,
-        server.service_space_uses,
-        server.service_space_remain,
-        server.service_space_percen,
-        server.service_type_id,
-        service_type.service_type_name,
-        server.service_cpu,
-        server.service_ram,
-        server.service_disk
-    FROM server
-    INNER JOIN service_type ON server.service_type_id = service_type.service_type_id";
-    $stmt = $pdo->prepare($query);
-    $stmt->execute();
-    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-} catch (Exception $e) {
-    echo "Query Error: " . $e->getMessage();
-}
+// try {
+//     require_once __DIR__ . '/../config/db.php';
+// } catch (Exception $e) {
+//     die("Could not load configuration: " . $e->getMessage());
+// }
+// try {
+//     $query = "SELECT
+//         server.server_id,
+//         server.service_id,
+//         server.service_name,  
+//         server.service_date,
+//         server.service_space,
+//         server.service_space_uses,
+//         server.service_space_remain,
+//         server.service_space_percen,
+//         server.service_type_id,
+//         service_type.service_type_name,
+//         server.service_cpu,
+//         server.service_ram,
+//         server.service_disk
+//     FROM server
+//     INNER JOIN service_type ON server.service_type_id = service_type.service_type_id";
+//     $stmt = $pdo->prepare($query);
+//     $stmt->execute();
+//     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+// } catch (Exception $e) {
+//     echo "Query Error: " . $e->getMessage();
+// }
 ?>
 <!DOCTYPE html>
 <html lang="en">
